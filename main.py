@@ -1,5 +1,14 @@
+#!/usr/bin/env python3
 
-t = str(input("Type a text: "))
+from sys import argv
+
+try:
+    t = str(argv[1])
+except:
+    t = input()
+    if len(t) == 0:
+        print('Pass a string to encrypt')
+        exit()
 
 def str_to_bin(letter: str) -> bin:
     return bin(ord(str(letter)))
